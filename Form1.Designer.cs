@@ -41,29 +41,26 @@
             this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.newCanvasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.AlphaL = new System.Windows.Forms.Label();
             this.AlphaTB = new System.Windows.Forms.TrackBar();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.EraserTB = new System.Windows.Forms.Button();
             this.Penbt = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.RedTB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BlueTB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GreenTB)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AlphaTB)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // RedL
@@ -150,7 +147,6 @@
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(46, 27);
             this.saveToolStripMenuItem.Text = "File";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // importToolStripMenuItem
             // 
@@ -178,14 +174,21 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(169, 6);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripMenuItem1.Image = global::Paint.Properties.Resources.wheel_of_color;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(131, 27);
+            this.toolStripMenuItem1.Text = "Custom color";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
             // toolStripTextBox1
             // 
             this.toolStripTextBox1.BackColor = System.Drawing.SystemColors.Control;
             this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 27);
-            this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
-            this.toolStripTextBox1.MouseHover += new System.EventHandler(this.toolStripTextBox1_MouseHover);
             // 
             // AlphaL
             // 
@@ -209,9 +212,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pictureBox4);
+            this.groupBox1.Controls.Add(this.numericUpDown1);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.vScrollBar1);
             this.groupBox1.Controls.Add(this.EraserTB);
             this.groupBox1.Controls.Add(this.Penbt);
             this.groupBox1.Location = new System.Drawing.Point(818, 470);
@@ -223,24 +225,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(17, 133);
+            this.textBox1.Location = new System.Drawing.Point(17, 68);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(96, 22);
             this.textBox1.TabIndex = 16;
             // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(134, 120);
-            this.vScrollBar1.Minimum = 1;
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(33, 45);
-            this.vScrollBar1.TabIndex = 15;
-            this.vScrollBar1.Value = 1;
-            this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
-            // 
             // EraserTB
             // 
-            this.EraserTB.Location = new System.Drawing.Point(17, 78);
+            this.EraserTB.Location = new System.Drawing.Point(116, 31);
             this.EraserTB.Name = "EraserTB";
             this.EraserTB.Size = new System.Drawing.Size(84, 31);
             this.EraserTB.TabIndex = 14;
@@ -258,47 +250,14 @@
             this.Penbt.UseVisualStyleBackColor = true;
             this.Penbt.Click += new System.EventHandler(this.Penbt_Click);
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Location = new System.Drawing.Point(184, 31);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(139, 124);
-            this.pictureBox4.TabIndex = 17;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox4_Paint);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripMenuItem1.Image = global::Paint.Properties.Resources.wheel_of_color;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(131, 27);
-            this.toolStripMenuItem1.Text = "Custom color";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox3.Location = new System.Drawing.Point(818, 67);
+            this.pictureBox3.Location = new System.Drawing.Point(921, 58);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(167, 164);
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Paint.Properties.Resources.img_colormap;
-            this.pictureBox2.Location = new System.Drawing.Point(1014, 67);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(171, 164);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            this.pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseDown);
-            this.pictureBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseMove);
-            this.pictureBox2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseUp);
             // 
             // pictureBox1
             // 
@@ -311,6 +270,14 @@
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(17, 111);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown1.TabIndex = 17;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // Form1
             // 
@@ -328,7 +295,6 @@
             this.Controls.Add(this.BlueL);
             this.Controls.Add(this.RedL);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -343,10 +309,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.AlphaTB)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,7 +320,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label RedL;
         private System.Windows.Forms.Label BlueL;
@@ -377,8 +341,7 @@
         private System.Windows.Forms.Button EraserTB;
         private System.Windows.Forms.Button Penbt;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
 
