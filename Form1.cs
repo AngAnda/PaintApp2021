@@ -93,13 +93,8 @@ namespace Paint
             toolState.CurrentTool = new EraseTool(toolState.BrushSize);
         }
 
-        private void VScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-            textBox1.Text = toolState.BrushSize.ToString();
-        }
-
         private void PictureBox1_MouseMove(object sender, MouseEventArgs e)
-        {
+        {   
             toolStripTextBox1.Text = "X: " + e.X.ToString() + "   Y: " + e.Y.ToString();
             if (toolState.IsActive)
                 canvasManager.DrawOnCanvas(toolState.CurrentTool, colorManager.CurrentColor, e.Location, toolState.BrushSize);
@@ -169,5 +164,9 @@ namespace Paint
             toolState.IsActive = true;
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
