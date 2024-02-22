@@ -101,7 +101,7 @@
             this.RedTB.Size = new System.Drawing.Size(255, 56);
             this.RedTB.TabIndex = 6;
             this.RedTB.Tag = "";
-            this.RedTB.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            this.RedTB.Scroll += new System.EventHandler(this.TrackBar1_Scroll);
             this.RedTB.ValueChanged += new System.EventHandler(this.RedTB_ValueChanged);
             // 
             // BlueTB
@@ -153,21 +153,21 @@
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
             this.importToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
             this.importToolStripMenuItem.Text = "Import";
-            this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
+            this.importToolStripMenuItem.Click += new System.EventHandler(this.ImportToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem1
             // 
             this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
             this.saveToolStripMenuItem1.Size = new System.Drawing.Size(172, 26);
             this.saveToolStripMenuItem1.Text = "Save";
-            this.saveToolStripMenuItem1.Click += new System.EventHandler(this.saveToolStripMenuItem1_Click);
+            this.saveToolStripMenuItem1.Click += new System.EventHandler(this.SaveToolStripMenuItem1_Click);
             // 
             // newCanvasToolStripMenuItem
             // 
             this.newCanvasToolStripMenuItem.Name = "newCanvasToolStripMenuItem";
             this.newCanvasToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
             this.newCanvasToolStripMenuItem.Text = "New Canvas";
-            this.newCanvasToolStripMenuItem.Click += new System.EventHandler(this.newCanvasToolStripMenuItem_Click);
+            this.newCanvasToolStripMenuItem.Click += new System.EventHandler(this.NewCanvasToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -181,7 +181,7 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(131, 27);
             this.toolStripMenuItem1.Text = "Custom color";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.ToolStripMenuItem1_Click);
             // 
             // toolStripTextBox1
             // 
@@ -267,9 +267,9 @@
             this.pictureBox1.Size = new System.Drawing.Size(736, 623);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
-            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBox1_MouseDown);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PictureBox1_MouseMove);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PictureBox1_MouseUp);
             // 
             // numericUpDown1
             // 
@@ -277,7 +277,7 @@
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
             this.numericUpDown1.TabIndex = 17;
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.NumericUpDown1_ValueChanged);
             // 
             // Form1
             // 

@@ -1,38 +1,60 @@
 ﻿using Paint.Tools;
-using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing.Imaging;
+using System.Windows.Forms;
+
 
 namespace Paint
 {
-    internal class CanvasManager
+    internal class CanvasManager : ICanvasManager
     {
         private Bitmap canvasBitmap;
-        private ITool currentTool;
+        private Graphics canvasGraphics;
+        private PictureBox canvasPictureBox;
 
-        public CanvasManager(int width, int height)
+        public CanvasManager(PictureBox pictureBox)
         {
-            canvasBitmap = new Bitmap(width, height);
-
+            this.canvasPictureBox = pictureBox;
+            InitializeCanvas();
         }
 
-        public void SetTool(ITool tool)
+        private void InitializeCanvas()
         {
-            currentTool = tool;
+            canvasBitmap = new Bitmap(canvasPictureBox.Width, canvasPictureBox.Height);
+            canvasGraphics = Graphics.FromImage(canvasBitmap);
+            canvasPictureBox.Image = canvasBitmap;
+            ClearCanvas();
         }
 
-        public void Draw(Point position)
+        public void ClearCanvas(Color clearColor = default(Color))
         {
-            if (currentTool != null)
-            {
-                using (Graphics g = Graphics.FromImage(canvasBitmap))
-                {
-                    //currentTool.UseTool(g, ); // Completare cu parametri necesari
-                }
-            }
+            clearColor = clearColor == default(Color) ? Color.White : clearColor;
+
+            canvasGraphics.Clear(clearColor);
+            canvasPictureBox.Invalidate();
+        }
+
+        public void DrawOnCanvas(ITool tool, Color color, Point point, int size)
+        {
+            tool.UseTool(canvasGraphics, color, point, size);
+            canvasPictureBox.Invalidate();
+        }
+
+        public Color GetColorFromPixel(int x, int y)
+        {
+            return canvasBitmap.GetPixel(x, y);
+        }
+
+        public void SaveCanvas(string filePath, ImageFormat format)
+        {
+            canvasBitmap.Save(filePath, format);
+        }
+
+        public void LoadCanvas(string filePath)
+        {
+            var image = Image.FromFile(filePath);
+            canvasGraphics.DrawImage(image, 0, 0);
+            canvasPictureBox.Invalidate();
         }
     }
 }
