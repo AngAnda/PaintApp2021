@@ -25,7 +25,7 @@ namespace Paint
             canvasManager = new CanvasManager(pictureBox1);
             toolState = new ToolState(15);
             toolState.CurrentTool = new PenTool(toolState.BrushSize);
-            
+
             AlphaTB.Value = 255;
 
             UpdateColorDisplay(colorManager);
@@ -101,12 +101,13 @@ namespace Paint
         private void PictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             toolStripTextBox1.Text = "X: " + e.X.ToString() + "   Y: " + e.Y.ToString();
-            canvasManager.DrawOnCanvas(toolState.CurrentTool, colorManager.CurrentColor, e.Location, toolState.BrushSize);
+            if (toolState.IsActive)
+                canvasManager.DrawOnCanvas(toolState.CurrentTool, colorManager.CurrentColor, e.Location, toolState.BrushSize);
         }
 
         private void PictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
-            toolState.IsActive = false;    
+            toolState.IsActive = false;
         }
 
         private void SaveToolStripMenuItem1_Click(object sender, EventArgs e)
